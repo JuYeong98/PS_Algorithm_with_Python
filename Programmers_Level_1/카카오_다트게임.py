@@ -71,4 +71,3 @@ def solution(dartResult):
                 
     print(number)
     return answer
-solution('10D10S#10S')
