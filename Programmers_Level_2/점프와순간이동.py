@@ -7,3 +7,5 @@ def solution(n):
         else:
             n/=2
     return ans
+
+print(solution(10))
