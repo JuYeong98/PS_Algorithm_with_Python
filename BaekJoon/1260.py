@@ -14,20 +14,9 @@ def dfs(graph, v):
             stack += reversed(graph[n])
     return visited
 
-def bfs(graph, v):
-    visited = []
-    queue = deque([v])
-    
-    while queue:
-        n = queue.popleft()
-        if n not in visited:
-            visited.append(n)
-            queue += graph[n]
-    return visited
 
 n, m, v = map(int, input().split())
-n, m , v = map(int, input().split())
-n, m ,v = map(int , input().split())
+n,m,v = map(int, input().split())
 
 graph = {i:[] for i in range(1,n+1)}
 for i in range(1, m+1):
@@ -40,3 +29,34 @@ for key in graph:
 
 print(' '.join(list(map(str,dfs(graph, v)))))
 print(' '.join(list(map(str,bfs(graph, v)))))
+
+
+def dfs(graph, v, visited):
+    visited[v] = True
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
+from collections import deque
+ 
+def bfs(graph, start, visited):
+    queue = deque([start])
+    visited[start] = True
+    while queue:
+        v = queue.popleft()
+        for i in graph[v]:
+            if not visitied[i]:
+                queue.append(i)
+                visitied[i] = True
+
+def bfs(graph , start, visited):
+    queue = deque([start])
+    visited[start] = True
+
+    while queue:
+        v= queue.popleft()
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
+                    
