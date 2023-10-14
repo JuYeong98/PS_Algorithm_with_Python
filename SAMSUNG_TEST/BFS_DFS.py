@@ -26,7 +26,7 @@ from collections import deque
 def BFS(graph, start, visited):
     #큐(QUEUE) 구혀늘 위해 deque 라이브러리 사용
     queue = deque([visited])
-
+    print(queue)
     #현재 노드 방문 처리 
     visited[start] = True
     #큐가 빌 때까지 반복
